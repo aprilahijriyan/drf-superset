@@ -1,2 +1,2 @@
-# dj-restapi
+# drf-superset
 Django REST Framework SuperSet
