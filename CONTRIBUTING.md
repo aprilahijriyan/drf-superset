@@ -8,7 +8,19 @@
     git flow feature start awesome-feature
     ```
 
-4. Publish your branch to the remote repository
+4. Install dependencies for development
+
+    ```
+    poetry install --dev
+    ```
+
+5. Initialize your repo with a pre-commit
+
+    ```
+    pre-commit install
+    ```
+
+6. Commit and publish your branch to the remote repository
 
     ```
     git flow feature publish awesome-feature
