@@ -87,7 +87,7 @@ class Command(BaseCommand):
     def handle(self, *args: Any, **options: Any) -> Optional[str]:
         subcommand = options["sub"]
         if subcommand is None:
-            self.print_help(sys.argv[0], "roles")
+            self.print_help(sys.argv[0], "role")
             return
 
         handle = getattr(self, f"handle_{subcommand}")
