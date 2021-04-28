@@ -1,0 +1,21 @@
+site_name: DRF SuperSet Docs
+
+theme:
+  name: material
+  font:
+    text: Raleway
+
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+      primary: light blue
+      accent: deep purple
+
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+      primary: white
+      accent: light blue

@@ -25,7 +25,7 @@ poetry env use $(which python3.7)
 And install all required dependency packages:
 
 ```
-poetry install
+poetry install --no-dev
 ```
 
 Create migrations for `drf_superset` and `media` apps:

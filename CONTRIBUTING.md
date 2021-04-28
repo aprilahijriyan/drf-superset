@@ -8,10 +8,10 @@
     git flow feature start awesome-feature
     ```
 
-4. Install dependencies for development
+4. Install dependencies
 
     ```
-    poetry install --dev
+    poetry install
     ```
 
 5. Initialize your repo with a pre-commit
