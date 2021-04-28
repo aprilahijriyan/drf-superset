@@ -43,3 +43,8 @@ class ForgotPasswordSerializer(Serializer):
 
 class ResetPasswordSerializer(Serializer):
     password = PasswordField(min_length=8, max_length=150)
+
+
+class LimitOffsetSerializer(Serializer):
+    limit = fields.IntegerField(required=False)
+    offset = fields.IntegerField(required=False)

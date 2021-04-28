@@ -9,6 +9,9 @@ def handler(exc, context):
     response = exception_handler(exc, context)
     if response is not None:
         data = response.data
+        if not isinstance(data, dict):
+            data = {"results": data}
+
         data["status"] = response.status_code
     else:
         data = None

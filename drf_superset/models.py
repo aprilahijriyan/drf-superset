@@ -31,6 +31,7 @@ class Log(models.Model):
 
 class User(AbstractUser):
     email = models.EmailField(_("email address"), unique=True)
+    fullname = models.TextField(_("full name"), null=False)
     confirmation_token = models.CharField(
         _("confirmation token"), max_length=255, null=True
     )
