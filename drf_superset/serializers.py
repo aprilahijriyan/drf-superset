@@ -1,9 +1,8 @@
-from django.contrib.auth import authenticate, get_user_model
+from django.contrib.auth import authenticate
 from rest_framework import fields
 from rest_framework.exceptions import AuthenticationFailed
 from rest_framework.serializers import Serializer
 from rest_framework_simplejwt.serializers import PasswordField
-from rest_framework_simplejwt.settings import api_settings
 from rest_framework_simplejwt.tokens import RefreshToken
 
 
