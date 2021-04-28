@@ -4,7 +4,6 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from drf_superset.authentication import TokenAuthentication
 from drf_superset.schemas import ResponseSchema
 from drf_superset.security import jwt
 from drf_superset.serializers import LimitOffsetSerializer
@@ -17,7 +16,6 @@ from .serializers import MediaListSerializer, MediaSerializer
 
 class MediaUpload(APIView):
     parser_classes = (MultiPartParser,)
-    authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
 
     @swagger_auto_schema(
