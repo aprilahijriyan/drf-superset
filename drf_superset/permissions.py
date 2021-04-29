@@ -4,7 +4,7 @@ from rest_framework.permissions import IsAuthenticated
 
 class RBAC(IsAuthenticated):
     """
-    Role Permission based on https://github.com/zemfrog/zemfrog/blob/master/zemfrog/decorators.py#L83
+    RBAC based on https://github.com/zemfrog/zemfrog/blob/master/zemfrog/decorators.py#L83
     """
 
     def __init__(self, roles: dict) -> None:
