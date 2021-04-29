@@ -1,12 +1,10 @@
 # Django REST Framework SuperSet
 
-This is a superset for the Django REST Framework, this includes:
-
-* JWT authentication (using [Django Simple JWT](https://github.com/jazzband/django-rest-framework-simplejwt))
-* OpenAPI (using [drf-yasg](https://github.com/axnsan12/drf-yasg))
-
-**Status is in progress, feel free if anyone wants to add features or anything!**
+**Status is in progress, feel free if anyone wants to add features or anything!** <br>
 For more details, see our contribution guidelines [here](https://github.com/aprilahijriyan/drf-superset/blob/main/CONTRIBUTING.md).
+
+* Read more: https://drf-superset.readthedocs.io/en/latest/
+
 
 # Quickstart
 
