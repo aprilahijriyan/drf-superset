@@ -34,5 +34,6 @@ This is a plugin that we use on our boilerplate.
     * Fernet encryption (used for token creation)
 
 * Commands
+    * `user` - To create a new user
     * `role` - To create a user role
     * `permission` - To create permissions for a user role
