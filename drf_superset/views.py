@@ -55,8 +55,8 @@ class Register(APIView):
             email = data["email"]
             first_name = data["first_name"]
             last_name = data["last_name"]
-            fullname = first_name + last_name
-            username = fullname + generate_random_string(4)
+            fullname = first_name + " " + last_name
+            username = fullname.replace(" ", "") + generate_random_string(4)
             model = get_user_model()
             if model.objects.filter(email=email).exists():
                 msg = {"detail": "Email already exists"}
