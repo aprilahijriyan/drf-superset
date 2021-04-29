@@ -1,7 +1,58 @@
 site_name: DRF SuperSet Docs
+repo_url: https://github.com/aprilahijriyan/drf-superset
+site_description: Django REST Framework SuperSet
+site_author: https://github.com/aprilahijriyan
+edit_uri: edit/main/docs/
+
+nav:
+  - 'Home': 'index.md'
+  - 'Documentation':
+    - 'Installation': 'rfc/installation.md'
+    - 'Configuration': 'rfc/configuration.md'
+    - 'Usage': 'rfc/usage.md'
+
+extra:
+  version:
+    provider: mike
+
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/aprilahijriyan
+
+    - icon: fontawesome/brands/medium
+      link: https://medium.com/@apriladev
+
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/apriladev
+
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/apriladev
+
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:hijriyan23@gmail.com
+
+copyright: Copyright &copy; 2021 Aprila Hijriyan
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.magiclink
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.emoji
+  - toc:
+      permalink: true
 
 theme:
   name: material
+  icon:
+    logo: octicons/rocket-24
+
+  features:
+    - navigation.instant
+    - navigation.top
+    - navigation.expand
+
   font:
     text: Raleway
 

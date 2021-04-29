@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "django_filters",
     "django_extensions",
     "rest_framework",
     "drf_yasg",
@@ -140,7 +139,6 @@ REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "drf_superset.authentication.TokenAuthentication",
     ),
-    "DEFAULT_FILTER_BACKENDS": ["django_filters.rest_framework.DjangoFilterBackend"],
 }
 
 SIMPLE_JWT = {

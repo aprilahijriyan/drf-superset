@@ -32,6 +32,10 @@ class Login(TokenObtainPairView):
         tags=["jwt"], request_body=LoginSerializer, responses={200: LoginSuccessSchema}
     )
     def post(self, request, *args, **kwargs):
+        """
+        end point to get access token
+        """
+
         return super().post(request, *args, **kwargs)
 
 
@@ -40,6 +44,10 @@ class Register(APIView):
 
     @swagger_auto_schema(tags=["jwt"], request_body=RegisterSerializer)
     def post(self, request, *args, **kwargs):
+        """
+        end point for registering new users
+        """
+
         serializer = self.serializer_class(data=request.data)
         if serializer.is_valid():
             data = serializer.validated_data
@@ -77,6 +85,10 @@ class Register(APIView):
 class AccountConfirm(APIView):
     @swagger_auto_schema(tags=["jwt"])
     def get(self, request, token):
+        """
+        end point to verify the user account
+        """
+
         model = get_user_model()
         user = model.objects.filter(confirmation_token=token).first()
         if user and not user.confirmed:
@@ -98,6 +110,10 @@ class ForgotPassword(APIView):
 
     @swagger_auto_schema(tags=["jwt"], request_body=ForgotPasswordSerializer)
     def post(self, request, *args, **kwargs):
+        """
+        endpoint for requesting a password reset
+        """
+
         serializer = self.serializer_class(data=request.data)
         if serializer.is_valid():
             data = serializer.validated_data
@@ -148,6 +164,10 @@ class ForgotPassword(APIView):
 class ResetPasswordVerify(APIView):
     @swagger_auto_schema(tags=["jwt"])
     def get(self, request, token):
+        """
+        end point to verify password reset token
+        """
+
         model = get_user_model()
         user = model.objects.filter(reset_password_token=token).first()
         if user:
@@ -178,6 +198,10 @@ class ResetPassword(APIView):
 
     @swagger_auto_schema(tags=["jwt"], request_body=ResetPasswordSerializer)
     def post(self, request, token, *args, **kwds):
+        """
+        endpoint to change the user's password
+        """
+
         model = get_user_model()
         user = model.objects.filter(reset_password_token=token).first()
         if user:
