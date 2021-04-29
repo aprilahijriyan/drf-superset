@@ -16,6 +16,7 @@ from .core.mailer import (
     send_email_password_changed,
     send_email_registration,
 )
+from .models import Log
 from .schemas import LoginSuccessSchema
 from .serializers import (
     ForgotPasswordSerializer,
@@ -140,6 +141,10 @@ class ForgotPassword(APIView):
                     token = token.decode()
                     user.reset_password_key = key
                     user.reset_password_token = token
+                    log = Log.objects.create(
+                        request_password_reset_date=datetime.utcnow()
+                    )
+                    user.logs.add(log)
                     user.save()
                     send_email_forgot_password(
                         {"email": user.email, "token": token},
@@ -219,6 +224,14 @@ class ResetPassword(APIView):
                     user.reset_password_key = None
                     user.reset_password_token = None
                     user.set_password(data["password"])
+                    log = (
+                        user.logs.all()
+                        .filter(request_password_reset_date__isnull=False)
+                        .first()
+                    )
+                    if log:
+                        log.password_change_date = datetime.utcnow()
+
                     user.save()
                     msg = {"detail": "Password has been changed"}
                     status = 200
