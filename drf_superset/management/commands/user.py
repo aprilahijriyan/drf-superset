@@ -32,12 +32,18 @@ class Command(BaseCommand):
         else:
             first_name = input("First name: ").strip()
             last_name = input("Last name: ").strip()
+            password = input("Password: ").strip()
+
             if not first_name:
                 self.stdout.write(self.style.ERROR("First name required"))
                 exit(1)
 
             if not last_name:
                 self.stdout.write(self.style.ERROR("Last name required"))
+                exit(1)
+
+            if not password:
+                self.stdout.write(self.style.ERROR("Password required"))
                 exit(1)
 
             fullname = first_name + " " + last_name
@@ -51,6 +57,8 @@ class Command(BaseCommand):
                 confirmed=True,
                 confirmed_date=timezone.now(),
             )
+            user.set_password(password)
+            user.save()
             roles = input("User roles (separated by commas): ").split(",")
             for p in roles:
                 p = p.strip()
