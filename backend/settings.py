@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     "rest_framework",
     "drf_yasg",
     "drf_superset",
-    "media",
 ]
 
 MIDDLEWARE = [

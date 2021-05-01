@@ -50,5 +50,4 @@ urlpatterns = [
         r"^redoc/$", schema_view.with_ui("redoc", cache_timeout=0), name="schema-redoc"
     ),
     path("api/", include("drf_superset.urls")),
-    path("media/", include("media.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
