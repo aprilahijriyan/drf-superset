@@ -11,7 +11,6 @@ repos:
       hooks:
           - id: autoflake
             name: autoflake
-            exclude: ^templates/
             args:
                 [
                     "-r",
@@ -25,21 +24,17 @@ repos:
       hooks:
           - id: isort
             name: isort (python)
-            exclude: ^templates/
 
           - id: isort
             name: isort (cython)
             types: [cython]
-            exclude: ^templates/
 
           - id: isort
             name: isort (pyi)
             types: [pyi]
-            exclude: ^templates/
 
     - repo: https://github.com/psf/black
       rev: 21.4b2
       hooks:
           - id: black
-            exclude: ^templates/
             args: ["-v"]
