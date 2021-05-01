@@ -26,10 +26,10 @@ And install all required dependency packages:
 poetry install --no-dev
 ```
 
-Create migrations for `drf_superset` and `media` apps:
+Create migrations for `drf_superset` app:
 
 ```
-python manage.py makemigrations drf_superset media
+python manage.py makemigrations drf_superset
 python manage.py migrate
 ```
 
