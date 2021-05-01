@@ -1,7 +1,7 @@
-# Contribution guidelines
+# Contribution Guidelines
 
 1. Repo forks and clones
-2. Make sure you have git-flow installed and initialized your repo using `git flow init`
+2. Make sure you have `git-flow` installed and initialized your repo using `git flow init`
 3. Create features, bugfixes, etc.
 
     ```
