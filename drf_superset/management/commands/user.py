@@ -86,6 +86,8 @@ class Command(BaseCommand):
         if user:
             first_name = input("First name: ").strip()
             last_name = input("Last name: ").strip()
+            password = input("Password: ").strip()
+
             if first_name:
                 user.first_name = first_name
             else:
@@ -102,15 +104,14 @@ class Command(BaseCommand):
                 user.fullname = fullname
                 user.username = username
 
-            roles = []
+            if password:
+                user.set_password(password)
+
             for p in input("User roles (separated by commas): ").split(","):
                 p = p.strip()
                 p = Role.objects.filter(name=p).first()
                 if p:
-                    roles.append(p)
-
-            if roles:
-                user.roles = roles
+                    user.roles.add(p)
 
             user.save()
             self.stdout.write(self.style.SUCCESS(f"User {email!r} updated"))
