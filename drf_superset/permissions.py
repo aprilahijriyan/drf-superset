@@ -1,3 +1,5 @@
+from typing import Any
+
 from rest_framework.exceptions import PermissionDenied
 from rest_framework.permissions import IsAuthenticated
 
@@ -37,3 +39,6 @@ class RBAC(IsAuthenticated):
             return True
 
         return False
+
+    def __call__(self, *args: Any, **kwds: Any) -> Any:
+        return self
